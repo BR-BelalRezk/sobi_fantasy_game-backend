@@ -1,0 +1,29 @@
+{
+  "name": "sobi-server",
+  "version": "1.0.0",
+  "description": "WebSocket server using ws library",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "websocket",
+    "ws",
+    "server"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/ws": "^8.5.10",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.11",
+    "ws": "^8.16.0"
+  }
+}
