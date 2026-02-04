@@ -1,5 +1,5 @@
 import { WebSocketServer } from "ws";
-import { WebSocketPool } from "../../core/utils/helpers/web-socket-pool";
+import { WebSocketPool } from "../../core/lib/helpers/web-socket-pool";
 
 type StartMessage = {
   event: 'start_speed_question',

@@ -1,8 +1,7 @@
-import { WebSocket, WebSocketServer } from 'ws';
-import { IncomingMessage } from 'http';
-import { WebSocketPool } from './core/utils/helpers/web-socket-pool';
+import { WebSocketServer } from 'ws';
 import { AuthAdapter } from './adapters/auth/adapter';
 import { SpeedQuestionsAdapter } from './adapters/speed_question/adapter';
+import { WebSocketPool } from './core/lib/helpers/web-socket-pool';
 
 const PORT = 3000;
 
