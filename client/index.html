@@ -879,6 +879,17 @@
       }
     }
 
+    function clearMessages(id) {
+      const conn = connections.find(c => c.id === id);
+      if (!conn) return;
+
+      if (confirm('Are you sure you want to clear all messages for this connection? This cannot be undone.')) {
+        conn.messages = [];
+        saveConnections();
+        updateUI();
+      }
+    }
+
     function formatTime(date) {
       return date.toLocaleTimeString('en-US', {
         hour: '2-digit',
@@ -972,6 +983,12 @@
                                 style="background: #9b59b6; color: white;"
                                 onclick="showEditConnectionModal(${conn.id})">
                             Edit Connection
+                        </button>
+                        <button class="action-btn" 
+                                style="background: #e67e22; color: white;"
+                                onclick="clearMessages(${conn.id})"
+                                ${conn.messages.length === 0 ? 'disabled' : ''}>
+                            Clear Messages
                         </button>
                     </div>
                 </div>

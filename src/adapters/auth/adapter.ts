@@ -27,7 +27,7 @@ export function AuthAdapter(wss: WebSocketServer, wsPool: WebSocketPool, room: R
         wsPool.append({ key: name, socket: ws });
         room[name].is_connected = true;
         ws.send(JSON.stringify({
-          event: 'you_team',
+          event: 'your_team',
           data: {
             name: room[name!].name,
             score: room[name].score,
@@ -56,12 +56,15 @@ export function AuthAdapter(wss: WebSocketServer, wsPool: WebSocketPool, room: R
     }
 
     ws.on('message', (event: string) => {
-      const parsed = JSON.parse(event)
-      if (parsed.event === 'start_experience') {
-        ws.send(JSON.stringify({
-          event: 'experience_started',
-          data: null
-        }))
+      const parsed = JSON.parse(event) as StartExperienceMessage
+      if (parsed.event === 'start_experience' && isAdmin) {
+        wsPool.send({
+          to: ['admin', 'team1', 'team2'],
+          message: {
+            event: 'experience_started',
+            data: null
+          }
+        })
       }
     })
 

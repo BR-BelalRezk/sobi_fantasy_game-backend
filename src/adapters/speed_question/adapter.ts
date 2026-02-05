@@ -19,11 +19,12 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
   wss.addListener('connection', (ws, request) => {
     const appName = getParams(request.url!).app_name as AppName;
     const teamName = getParams(request.url!).team_name as RoomTeamName;
+    const isAdmin = (getParams(request.url!).role === 'admin')
 
     ws.on('message', (data: string) => {
       const parsed: StartMessage | AnswerMessage = JSON.parse(data.toString());
 
-      if (parsed.event === 'start_speed_question') {
+      if (parsed.event === 'start_speed_question' && isAdmin) {
         import(`../../core/data/${appName}.json`).then(({ questions }: App) => {
           room.is_started = true;
           room.events_queue.push('view_speed_question');
