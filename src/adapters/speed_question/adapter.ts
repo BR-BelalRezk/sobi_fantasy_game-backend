@@ -42,52 +42,50 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
       }
 
       if ((parsed.event === 'answer_speed_question') && room.team_won_phase1 === null) {
-        const data = readFileSync(`../../core/data/${appName}.json`, 'utf-8');
-        const { questions }: App = JSON.parse(data);
+        import(`../../core/data/${appName}.json`).then(({ questions }: App) => {
+          const answers = questions.speed_question.answers
+          const isCorrect = Boolean(answers.find(ans => ans.id === parsed.data.answer_id)?.is_correct)
+          room[teamName].answered_speed_question = true;
 
-        const answers = questions.speed_question.answers
-        const isCorrect = Boolean(answers.find(ans => ans.id === parsed.data.answer_id)?.is_correct)
-        room[teamName].answered_speed_question = true;
-
-        if (!isCorrect) {
-          wsPool.send({
-            to: [teamName],
-            message: {
-              event: 'speed_question_answer_status',
-              data: { correct: false }
-            }
-          })
-        } else {
-          room.team_won_phase1 = teamName;
-          wsPool.send({
-            to: [teamName],
-            message: {
-              event: 'speed_question_answer_status',
-              data: { correct: true }
-            }
-          })
-        }
-
-        let winnerTeam = room.team_won_phase1
-
-        if (room.team1.answered_speed_question && room.team2.answered_speed_question) {
-          if (winnerTeam === null) {
-            winnerTeam = ['team1', 'team2'].at(Math.floor(Math.random() * 2)) as RoomTeamName
-          } else {
+          if (!isCorrect) {
             wsPool.send({
-              to: ['admin', 'team1', 'team2'],
+              to: [teamName],
               message: {
-                event: 'speed_question_winner',
-                data: {
-                  team: winnerTeam,
-                  team_name: room[winnerTeam]
-                }
+                event: 'speed_question_answer_status',
+                data: { correct: false }
+              }
+            })
+          } else {
+            room.team_won_phase1 = teamName;
+            wsPool.send({
+              to: [teamName],
+              message: {
+                event: 'speed_question_answer_status',
+                data: { correct: true }
               }
             })
           }
-        }
-      }
 
+          let winnerTeam = room.team_won_phase1
+
+          if (room.team1.answered_speed_question && room.team2.answered_speed_question) {
+            if (winnerTeam === null) {
+              winnerTeam = ['team1', 'team2'].at(Math.floor(Math.random() * 2)) as RoomTeamName
+            } else {
+              wsPool.send({
+                to: ['admin', 'team1', 'team2'],
+                message: {
+                  event: 'speed_question_winner',
+                  data: {
+                    team: winnerTeam,
+                    team_name: room[winnerTeam]
+                  }
+                }
+              })
+            }
+          }
+        })
+      }
     });
   })
 }
