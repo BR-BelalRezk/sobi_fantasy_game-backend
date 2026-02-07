@@ -110,7 +110,9 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           }))
         }
 
-        const is_correct = Boolean(question.answers.find(a => a.id === parsed.data.answer_id)?.is_correct)
+        const is_correct = parsed.data.question_id ?
+          Boolean(apps[appName].questions.magic_questions[teamName].answers.find(ans => ans.id === parsed.data.answer_id)) :
+          Boolean(question.answers.find(a => a.id === parsed.data.answer_id)?.is_correct)
 
         if (is_correct) {
           room[teamName].score += question.points

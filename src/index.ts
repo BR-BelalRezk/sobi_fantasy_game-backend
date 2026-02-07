@@ -24,7 +24,8 @@ const room: Room = {
     is_connected: false,
     score: 0,
     used_magic_card: false,
-    answered_speed_question: false
+    answered_speed_question: false,
+    answered_main_questions_count: 0,
 
   },
   team2: {
@@ -33,7 +34,8 @@ const room: Room = {
     is_connected: false,
     score: 0,
     used_magic_card: false,
-    answered_speed_question: false
+    answered_speed_question: false,
+    answered_main_questions_count: 0,
   },
 }
 

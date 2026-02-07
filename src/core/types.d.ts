@@ -8,6 +8,7 @@ declare type Room = {
     name: string;
     choosen_club: Club | null;
     is_connected: boolean;
+    answered_main_questions_count: number,
     score: number;
     used_magic_card: boolean;
     answered_speed_question: boolean
@@ -16,6 +17,7 @@ declare type Room = {
     name: string;
     choosen_club: Club | null;
     is_connected: boolean;
+    answered_main_questions_count: number,
     score: number;
     used_magic_card: boolean;
     answered_speed_question: boolean
