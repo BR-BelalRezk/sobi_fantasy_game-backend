@@ -72,7 +72,7 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
               event: 'speed_question_winner',
               data: {
                 team: room.team_won_phase1,
-                team_name: room[room.team_won_phase1]
+                team_name: room[room.team_won_phase1].name
               }
             }
           })

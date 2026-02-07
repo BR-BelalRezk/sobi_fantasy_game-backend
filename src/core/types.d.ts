@@ -2,7 +2,7 @@ declare type Room = {
   is_started: boolean;
   used_magic_card_questions_ids: string[];
   team_won_phase1: RoomTeamName | null,
-  choosen_questions_ids: string[];
+  choosen_main_questions_ids: number[];
   first_choosen_club_id: number | null;
   team1: {
     name: string;
@@ -33,6 +33,15 @@ declare type Club = {
   img_url: string;
 }
 
+declare type MagicQuestion = {
+  question: string;
+  answers: {
+    answer: string;
+    is_correct: boolean;
+    id: number;
+  }[];
+}
+
 declare type App = {
   questions: {
     speed_question: {
@@ -44,14 +53,9 @@ declare type App = {
       }[];
     };
     magic_questions: {
-      id: number;
-      question: string;
-      answers: {
-        answer: string;
-        is_correct: boolean;
-        id: number;
-      }[];
-    }[];
+      team1: MagicQuestion,
+      team2: MagicQuestion
+    };
     main_questions: {
       id: number;
       img_url: string;

@@ -31,7 +31,7 @@ export function StartingAdapter(wss: WebSocketServer, wsPool: WebSocketPool, roo
           data: {
             name: room[name!].name,
             score: room[name].score,
-            can_start_phase2: room.team_won_phase1 === name,
+            won_phase1: room.team_won_phase1 === name,
             used_magic_card: room[name].used_magic_card,
             choosen_club: room[name].choosen_club,
           }

@@ -47,9 +47,8 @@
         }
       ]
     },
-    "magic_questions": [
-      {
-        "id": 1,
+    "magic_questions": {
+      "team1": {
         "question": "in Persist 2 Study…........... of Patients in VONJO were anemic (hgb <10 g/dl)",
         "answers": [
           {
@@ -74,8 +73,7 @@
           }
         ]
       },
-      {
-        "id": 2,
+      "team2": {
         "question": "In the PERSIST-2 Study: Proportion of patients with reduced RBC transfusion burden at Week 24 with VONJO 200 mg BID",
         "answers": [
           {
@@ -100,7 +98,7 @@
           }
         ]
       }
-    ],
+    },
     "main_questions": [
       {
         "id": 1,
