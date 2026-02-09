@@ -73,14 +73,28 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
             }))
           } else {
             room[teamName].used_magic_card = true;
-            ws.send(JSON.stringify({
-              event: 'magic_card_question',
-              data: {
-                question: apps[appName].questions.magic_questions[teamName],
+            wsPool.send({
+              to: [teamName, 'admin'],
+              message: {
+                event: 'magic_card_question',
+                data: {
+                  question: apps[appName].questions.magic_questions[teamName],
+                }
               }
-            }))
+            })
           }
         }
+        wsPool.send({
+          to: ['admin'],
+          message: {
+            event: 'choosen_main_question',
+            data: {
+              question,
+              club: room[teamName].choosen_club,
+              team_name: room[teamName].name,
+            }
+          }
+        });
 
         if (room.current_main_question_timeout) {
           clearTimeout(room.current_main_question_timeout);
