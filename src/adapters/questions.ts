@@ -82,28 +82,21 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           }
         }
 
-        // Clear any existing timeout
         if (room.current_main_question_timeout) {
           clearTimeout(room.current_main_question_timeout);
         }
 
-        // Store current answering team
         room.current_answering_team = teamName;
 
-        // Start 60-second timeout for this question
         room.current_main_question_timeout = setTimeout(() => {
-          // Auto-mark as wrong if no answer received
           const currentTeam = room.current_answering_team;
           if (currentTeam && question) {
             const remainingTeamName = getRemainingTeamName(currentTeam);
 
-            // Increment answered questions count
             room[currentTeam].answered_main_questions_count += 1;
 
-            // Deduct points for timeout (wrong answer)
             room[currentTeam].score -= question.points;
 
-            // Send result to admin (same as normal answer flow)
             wsPool.send({
               to: ['admin'],
               message: {
@@ -119,7 +112,6 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
               }
             });
 
-            // Unhold the other team (same as normal answer flow)
             wsPool.send({
               to: [remainingTeamName],
               message: {
@@ -163,21 +155,6 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           room.current_answering_team = null;
         }, 60000); // 60 seconds
         room.choosen_main_questions_ids.push(parsed.data.question_id)
-        wsPool.send({
-          to: ['admin'],
-          message: {
-            event: 'view_choosen_main_question',
-            data: {
-              question,
-              team: {
-                club: room[teamName].choosen_club,
-                name: room[teamName].name,
-                score: room[teamName].score,
-                is_magic_card_question: parsed.data.use_magic_card,
-              },
-            }
-          }
-        })
       } else if (parsed.event === 'answer_main_question' && !isAdmin) {
         // Clear timeout when answer is received
         if (room.current_main_question_timeout) {
