@@ -138,35 +138,54 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
               }
             });
 
-            // Check for game end
+
             if (
-              (room.team1.answered_main_questions_count >= 5) &&
               (room.team1.answered_main_questions_count === room.team2.answered_main_questions_count)
             ) {
-              let data = {
-                score: room.team1.score,
-                name: room.team1.name,
-                club: room.team1.choosen_club,
+              if ((room.team1.answered_main_questions_count === 8) && (room.team1.score === room.team2.score)) {
+                wsPool.send({
+                  to: ['team1', 'team2', 'admin'],
+                  message: {
+                    event: 'game_draw',
+                  }
+                })
+                wsPool.clear()
               }
-              if (room.team2.score > room.team1.score) {
-                data = {
-                  score: room.team2.score,
-                  name: room.team2.name,
-                  club: room.team2.choosen_club,
+              if (room.team1.answered_main_questions_count >= 5 && (Math.abs(room.team1.score - room.team2.score) > 0)) {
+                let data = {
+                  score: room.team1.score,
+                  name: room.team1.name,
+                  club: room.team1.choosen_club,
                 }
+                if (room.team2.score > room.team1.score) {
+                  data = {
+                    score: room.team2.score,
+                    name: room.team2.name,
+                    club: room.team2.choosen_club,
+                  }
+                }
+                wsPool.send({
+                  to: ['team1', 'team2', 'admin'],
+                  message: {
+                    event: 'winner',
+                    data
+                  }
+                })
+                wsPool.clear()
               }
-              wsPool.send({
-                to: ['team1', 'team2', 'admin'],
-                message: {
-                  event: 'winner',
-                  data
-                }
-              })
-              wsPool.clear()
+
+              if (room.team1.answered_main_questions_count === 5 && (room.team1.score === room.team2.score)) {
+                wsPool.send({
+                  to: ['team1', 'team2', 'admin'],
+                  message: {
+                    event: 'play_draw',
+                  }
+                })
+                wsPool.clear()
+              }
             }
           }
 
-          // Clear timeout and current answering team
           room.current_main_question_timeout = null;
           room.current_answering_team = null;
         }, 60000); // 60 seconds
@@ -232,29 +251,49 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
         })
 
         if (
-          (room.team1.answered_main_questions_count >= 5) &&
           (room.team1.answered_main_questions_count === room.team2.answered_main_questions_count)
         ) {
-          let data = {
-            score: room.team1.score,
-            name: room.team1.name,
-            club: room.team1.choosen_club,
+          if ((room.team1.answered_main_questions_count === 8) && (room.team1.score === room.team2.score)) {
+            wsPool.send({
+              to: ['team1', 'team2', 'admin'],
+              message: {
+                event: 'game_draw',
+              }
+            })
+            wsPool.clear()
           }
-          if (room.team2.score > room.team1.score) {
-            data = {
-              score: room.team2.score,
-              name: room.team2.name,
-              club: room.team2.choosen_club,
+          if (room.team1.answered_main_questions_count >= 5 && (Math.abs(room.team1.score - room.team2.score) > 0)) {
+            let data = {
+              score: room.team1.score,
+              name: room.team1.name,
+              club: room.team1.choosen_club,
             }
+            if (room.team2.score > room.team1.score) {
+              data = {
+                score: room.team2.score,
+                name: room.team2.name,
+                club: room.team2.choosen_club,
+              }
+            }
+            wsPool.send({
+              to: ['team1', 'team2', 'admin'],
+              message: {
+                event: 'winner',
+                data
+              }
+            })
+            wsPool.clear()
           }
-          wsPool.send({
-            to: ['team1', 'team2', 'admin'],
-            message: {
-              event: 'winner',
-              data
-            }
-          })
-          wsPool.clear()
+
+          if (room.team1.answered_main_questions_count === 5 && (room.team1.score === room.team2.score)) {
+            wsPool.send({
+              to: ['team1', 'team2', 'admin'],
+              message: {
+                event: 'play_draw',
+              }
+            })
+            wsPool.clear()
+          }
         }
       }
     })
