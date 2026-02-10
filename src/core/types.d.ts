@@ -35,7 +35,8 @@ declare type AppName = 'c3g' | 'dbd-dash' | 'doptlet' | 'gamifient' | 'vonjo'
 declare type Club = {
   name: string;
   id: number;
-  img_url: string;
+  logo_img_url: string;
+  name_img_url: string;
 }
 
 declare type MagicQuestion = {
@@ -50,6 +51,7 @@ declare type MagicQuestion = {
 declare type App = {
   questions: {
     speed_question: {
+      audio_url: string;
       question: string;
       answers: {
         answer: string;
@@ -66,6 +68,7 @@ declare type App = {
       img_url: string;
       points: number;
       question: string;
+      audio_url: string;
       answers: {
         answer: string;
         is_correct: boolean;

@@ -4,25 +4,29 @@
       "name": "Al Nassr",
       "id": 1,
       "logo_img_url": "/assets/images/apps/c3g/clubs/nasr-logo.webp",
-      "name_img_url": "/assets/images/apps/c3g/clubs/nasr-name.webp"
+      "name_img_url": "/assets/images/apps/c3g/clubs/nasr-name.webp",
+      "card_img_url": "/assets/images/apps/c3g/clubs/nasr-card.webp"
     },
     {
       "name": "Al Hilal",
       "id": 2,
       "logo_img_url": "/assets/images/apps/c3g/clubs/hilal-logo.webp",
-      "name_img_url": "/assets/images/apps/c3g/clubs/hilal-name.webp"
+      "name_img_url": "/assets/images/apps/c3g/clubs/hilal-name.webp",
+      "card_img_url": "/assets/images/apps/c3g/clubs/hilal-card.webp"
     },
     {
       "name": "Real Madrid",
       "id": 3,
       "logo_img_url": "/assets/images/apps/c3g/clubs/madrid-logo.webp",
-      "name_img_url": "/assets/images/apps/c3g/clubs/madrid-name.webp"
+      "name_img_url": "/assets/images/apps/c3g/clubs/madrid-name.webp",
+      "card_img_url": "/assets/images/apps/c3g/clubs/madrid-card.webp"
     },
     {
       "name": "Barcelona",
       "id": 4,
       "logo_img_url": "/assets/images/apps/c3g/clubs/barcelona-logo.webp",
-      "name_img_url": "/assets/images/apps/c3g/clubs/barcelona-name.webp"
+      "name_img_url": "/assets/images/apps/c3g/clubs/barcelona-name.webp",
+      "card_img_url": "/assets/images/apps/c3g/clubs/barcelona-card.webp"
     }
   ],
   "questions": {
