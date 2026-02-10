@@ -233,6 +233,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
               used_magic_card: room[teamName].used_magic_card,
               team_name: room[teamName].name,
               club: room[teamName].choosen_club,
+              question_img: question.img_url
             }
           }
         })
