@@ -112,7 +112,7 @@
       {
         "id": 1,
         "img_url": "/assets/images/apps/c3g/players/ronaldo.webp",
-        "audio_url": "/assets/audios/c3g/valiant_trial.mp3",
+        "audio_url": "/audios/c3g/valiant_trial.mp3",
         "points": 350,
         "question": "Valiant trial : Adult baseline biopsies are those performed during screening to confirm diagnosis/eligibility, or historical biopsies conducted within…........... weeks of study randomisation. ",
         "answers": [
@@ -141,7 +141,7 @@
       {
         "id": 2,
         "img_url": "/assets/images/apps/c3g/players/neymar.webp",
-        "audio_url": "/assets/audios/c3g/maintenance_peg.mp3",
+        "audio_url": "/audios/c3g/maintenance_peg.mp3",
         "points": 350,
         "question": "what is the maintainace PEG. dose for patients <35 kg",
         "answers": [
@@ -171,7 +171,7 @@
         "id": 3,
         "img_url": "/assets/images/apps/c3g/players/mo.webp",
         "points": 350,
-        "audio_url": "/assets/audios/c3g/adolescents_percentage.mp3",
+        "audio_url": "/audios/c3g/adolescents_percentage.mp3",
         "question": "what is the percentage of Adolescents (12–17 years) included in Valliant trial?",
         "answers": [
           {
@@ -200,7 +200,7 @@
         "id": 4,
         "img_url": "/assets/images/apps/c3g/players/robert.webp",
         "points": 350,
-        "audio_url": "/assets/audios/c3g/fifa_world_cup.mp3",
+        "audio_url": "/audios/c3g/fifa_world_cup.mp3",
         "question": "Which South African city hosted the 2010 FIFA World Cup final?",
         "answers": [
           {
@@ -228,7 +228,7 @@
       {
         "id": 5,
         "img_url": "/assets/images/apps/c3g/players/salem.webp",
-        "audio_url": "/assets/audios/c3g/recurrance_percentage.mp3",
+        "audio_url": "/audios/c3g/recurrance_percentage.mp3",
         "points": 250,
         "question": "What is the % of disease recurrance  with C3G or primary IC-MPGN  following kidney transplantation?",
         "answers": [
@@ -257,7 +257,7 @@
       {
         "id": 6,
         "img_url": "/assets/images/apps/c3g/players/sadio.webp",
-        "audio_url": "/assets/audios/c3g/mmf_corticosteroids.mp3",
+        "audio_url": "/audios/c3g/mmf_corticosteroids.mp3",
         "points": 250,
         "question": "MMF and corticosteroids (prednisone ≤…....... mg/day) permitted in Valliant trial",
         "answers": [
@@ -286,7 +286,7 @@
       {
         "id": 7,
         "img_url": "/assets/images/apps/c3g/players/vinicius.webp",
-        "audio_url": "/assets/audios/c3g/proteinuria_reduction.mp3",
+        "": "/audios/c3g/proteinuria_reduction.mp3",
         "points": 250,
         "question": "Patients were ….... times more likely to achieve ≥50% proteinuria reduction with Pegcetacoplan vs placebo",
         "answers": [
@@ -315,7 +315,7 @@
       {
         "id": 8,
         "img_url": "/assets/images/apps/c3g/players/pedri.webp",
-        "audio_url": "/assets/audios/c3g/100_percent.mp3",
+        "": "/audios/c3g/100_percent.mp3",
         "points": 250,
         "question": "100% of Pegcetacoplan treated …........ patients achieving 0 C3 staining at week 26",
         "answers": [
@@ -344,7 +344,7 @@
       {
         "id": 9,
         "img_url": "/assets/images/apps/c3g/players/malcom.webp",
-        "audio_url": "/assets/audios/c3g/pegcetacoplan.mp3",
+        "": "/audios/c3g/pegcetacoplan.mp3",
         "points": 100,
         "question": "…...% of Pegcetacoplan treated patients achieved <1 g/g proteinuria after 26 weeks",
         "answers": [
@@ -373,7 +373,7 @@
       {
         "id": 10,
         "img_url": "/assets/images/apps/c3g/players/otavio.webp",
-        "audio_url": "/assets/audios/c3g/week.mp3",
+        "": "/audios/c3g/week.mp3",
         "points": 100,
         "question": "in Valliant trial, Proteinuria reduction was seen as early as Week …...",
         "answers": [
@@ -402,7 +402,7 @@
       {
         "id": 11,
         "img_url": "/assets/images/apps/c3g/players/luka.webp",
-        "audio_url": "/assets/audios/c3g/renal_function.mp3",
+        "": "/audios/c3g/renal_function.mp3",
         "points": 100,
         "question": "Pegcetacoplan stabilised renal function, with a +…...... mL/min/1.73 m2 eGFR change vs placebo",
         "answers": [
@@ -430,7 +430,7 @@
       },
       {
         "id": 12,
-        "audio_url": "/assets/audios/c3g/c3g_icmpgn.mp3",
+        "audio_url": "/audios/c3g/c3g_icmpgn.mp3",
         "img_url": "/assets/images/apps/c3g/players/gavi.webp",
         "points": 100,
         "question": "Around 50% of patients with C3G and primary IC-MPGN reach kidney failure within 10 years of diagnosis",
@@ -450,7 +450,7 @@
       {
         "id": 13,
         "img_url": "/assets/images/apps/c3g/players/ali.webp",
-        "audio_url": "/assets/audios/c3g/priamry_icmpgn.mp3",
+        "audio_url": "/audios/c3g/priamry_icmpgn.mp3",
         "points": 50,
         "question": "Primary IC-MPGN is diagnosed after exclusion of secondary conditions, including",
         "answers": [
@@ -479,7 +479,7 @@
       {
         "id": 14,
         "img_url": "/assets/images/apps/c3g/players/abdulrahman.webp",
-        "audio_url": "/assets/audios/c3g/kdigo.mp3",
+        "audio_url": "/audios/c3g/kdigo.mp3",
         "points": 50,
         "question": "Current KDIGO guideline-endorsed therapies do not target the underlying pathologic disease mechanisms",
         "answers": [
@@ -499,7 +499,7 @@
         "id": 15,
         "img_url": "/assets/images/apps/c3g/players/lucas.webp",
         "points": 50,
-        "audio_url": "/assets/audios/c3g/proteinuria.mp3",
+        "audio_url": "/audios/c3g/proteinuria.mp3",
         "question": "Reducing proteinuria by…........... is key to reducing risk of progression to kidney failure",
         "answers": [
           {
@@ -526,7 +526,7 @@
       },
       {
         "id": 16,
-        "audio_url": "/assets/audios/c3g/Pegcetacoplan_26_weeks.mp3",
+        "audio_url": "/audios/c3g/Pegcetacoplan_26_weeks.mp3",
         "img_url": "/assets/images/apps/c3g/players/sergi.webp",
         "points": 50,
         "question": "Pegcetacoplan reduced proteinuria by …...% vs placebo at 26 weeks",

@@ -191,7 +191,6 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
         }, 60000); // 60 seconds
         room.choosen_main_questions_ids.push(parsed.data.question_id)
       } else if (parsed.event === 'answer_main_question' && !isAdmin) {
-        // Clear timeout when answer is received
         if (room.current_main_question_timeout) {
           clearTimeout(room.current_main_question_timeout);
           room.current_main_question_timeout = null;
