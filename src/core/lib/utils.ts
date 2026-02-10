@@ -9,3 +9,7 @@ export function getParams<T extends Record<string, string>>(url: string) {
 export function getRemainingTeamName(teamName: RoomTeamName) {
   return teamName === 'team1' ? 'team2' : 'team1';
 }
+
+export function wait(ms: number) {
+  return new Promise<void>(resolve => setTimeout(() => resolve(), ms));
+}
