@@ -12,7 +12,7 @@ export function StartingAdapter(wss: WebSocketServer, wsPool: WebSocketPool, roo
     const name = getParams(request.url!).team_name as RoomTeamName | undefined;
     const isAdmin = (getParams(request.url!).role === 'admin')
     const appName = getParams(request.url!).app_name as AppName | undefined;
-    console.log(name, room)
+
     if (appName && isAdmin) {
       wsPool.append({ key: 'admin', socket: ws })
     } else if (appName && name) {

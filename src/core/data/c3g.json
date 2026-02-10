@@ -58,52 +58,44 @@
     },
     "magic_questions": {
       "team1": {
-        "question": "in Persist 2 Study…........... of Patients in VONJO were anemic (hgb <10 g/dl)",
+        "audio_url": "/audios/c3g/magic-question-1.mp3",
+        "question": "…..% of patients had a ≥50% proteinuria reduction (2° endpoint)",
         "answers": [
           {
-            "answer": "55%",
+            "answer": "51",
             "is_correct": false,
             "id": 1
           },
           {
-            "answer": "69%",
-            "is_correct": true,
+            "answer": "55",
+            "is_correct": false,
             "id": 2
           },
           {
-            "answer": "62%",
-            "is_correct": false,
+            "answer": "60",
+            "is_correct": true,
             "id": 3
           },
           {
-            "answer": "65%",
+            "answer": "65",
             "is_correct": false,
             "id": 4
           }
         ]
       },
       "team2": {
-        "question": "In the PERSIST-2 Study: Proportion of patients with reduced RBC transfusion burden at Week 24 with VONJO 200 mg BID",
+        "audio_url": "/audios/c3g/magic-question-2.mp3",
+        "question": "evidense of active disese for Adolescents with no baseline biopsy includes  Plasma sC5b-9 level >ULN - Serum C3 <LLN - Active urine sediment - Presence of C3 nephritic factor",
         "answers": [
           {
-            "answer": "25%",
-            "is_correct": false,
+            "answer": "True",
+            "is_correct": true,
             "id": 1
           },
           {
-            "answer": "22%",
-            "is_correct": true,
+            "answer": "False",
+            "is_correct": false,
             "id": 2
-          },
-          {
-            "answer": "27%",
-            "is_correct": false,
-            "id": 3
-          },
-          {
-            "answer": "20%",
-            "is_correct": false,
-            "id": 4
           }
         ]
       }
