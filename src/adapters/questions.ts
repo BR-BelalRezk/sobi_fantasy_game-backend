@@ -2,6 +2,7 @@ import { WebSocketServer } from "ws";
 import { WebSocketPool } from "../core/lib/helpers/web-socket-pool";
 import { getParams, getRemainingTeamName, wait } from "../core/lib/utils";
 import { apps } from "../core/lib/assets";
+import { baseRoom } from "..";
 
 type Message = {
   event: 'start_main_questions',
@@ -172,6 +173,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                     data
                   }
                 })
+                room = baseRoom;
                 wsPool.clear()
               }
 
@@ -283,6 +285,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                 data
               }
             })
+            room = baseRoom;
             wsPool.clear()
           }
 

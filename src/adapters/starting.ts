@@ -1,9 +1,16 @@
 import { WebSocketServer } from "ws";
 import { getParams } from "../core/lib/utils";
 import { WebSocketPool } from "../core/lib/helpers/web-socket-pool";
+import { baseRoom } from "..";
 
 type StartExperienceMessage = {
   event: "start_experience",
+  data: null
+} | {
+  event: "unhold_play_draw",
+  data: null
+} | {
+  event: "terminate_game",
   data: null
 }
 
@@ -65,6 +72,28 @@ export function StartingAdapter(wss: WebSocketServer, wsPool: WebSocketPool, roo
             data: null
           }
         })
+      }
+
+      if (parsed.event === 'unhold_play_draw' && isAdmin) {
+        wsPool.send({
+          to: ['team1', 'team2'],
+          message: {
+            event: 'unhold_draw',
+            data: null
+          }
+        })
+      }
+
+      if (parsed.event === 'terminate_game' && isAdmin) {
+        wsPool.send({
+          to: ['admin', 'team1', 'team2'],
+          message: {
+            event: 'game_terminated',
+            data: null
+          }
+        })
+        wsPool.clear();
+        room = baseRoom;
       }
     })
 

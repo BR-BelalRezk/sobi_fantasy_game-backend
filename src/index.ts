@@ -11,6 +11,36 @@ const wss = new WebSocketServer({ port: Number(PORT) });
 
 const socketsPool = new WebSocketPool()
 
+export const baseRoom: Room = {
+  is_started: false,
+  choosen_main_questions_ids: [],
+  first_choosen_club_id: null,
+  team_won_phase1: null,
+  used_magic_card_questions_ids: [],
+  speed_question_timeout: null,
+  current_main_question_timeout: null,
+  current_answering_team: null,
+  team1: {
+    name: "Team (A)",
+    choosen_club: null,
+    is_connected: false,
+    score: 0,
+    used_magic_card: false,
+    answered_speed_question: false,
+    answered_main_questions_count: 0,
+
+  },
+  team2: {
+    name: "Team (B)",
+    choosen_club: null,
+    is_connected: false,
+    score: 0,
+    used_magic_card: false,
+    answered_speed_question: false,
+    answered_main_questions_count: 0,
+  },
+}
+
 const room: Room = {
   is_started: false,
   choosen_main_questions_ids: [],

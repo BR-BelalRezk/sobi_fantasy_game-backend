@@ -278,7 +278,7 @@
       {
         "id": 7,
         "img_url": "/assets/images/apps/c3g/players/vinicius.webp",
-        "": "/audios/c3g/proteinuria_reduction.mp3",
+        "audio_url": "/audios/c3g/proteinuria_reduction.mp3",
         "points": 250,
         "question": "Patients were ….... times more likely to achieve ≥50% proteinuria reduction with Pegcetacoplan vs placebo",
         "answers": [
@@ -307,7 +307,7 @@
       {
         "id": 8,
         "img_url": "/assets/images/apps/c3g/players/pedri.webp",
-        "": "/audios/c3g/100_percent.mp3",
+        "audio_url": "/audios/c3g/100_percent.mp3",
         "points": 250,
         "question": "100% of Pegcetacoplan treated …........ patients achieving 0 C3 staining at week 26",
         "answers": [
@@ -336,7 +336,7 @@
       {
         "id": 9,
         "img_url": "/assets/images/apps/c3g/players/malcom.webp",
-        "": "/audios/c3g/pegcetacoplan.mp3",
+        "audio_url": "/audios/c3g/pegcetacoplan.mp3",
         "points": 100,
         "question": "…...% of Pegcetacoplan treated patients achieved <1 g/g proteinuria after 26 weeks",
         "answers": [
@@ -365,7 +365,7 @@
       {
         "id": 10,
         "img_url": "/assets/images/apps/c3g/players/otavio.webp",
-        "": "/audios/c3g/week.mp3",
+        "audio_url": "/audios/c3g/week.mp3",
         "points": 100,
         "question": "in Valliant trial, Proteinuria reduction was seen as early as Week …...",
         "answers": [
@@ -394,7 +394,7 @@
       {
         "id": 11,
         "img_url": "/assets/images/apps/c3g/players/luka.webp",
-        "": "/audios/c3g/renal_function.mp3",
+        "audio_url": "/audios/c3g/renal_function.mp3",
         "points": 100,
         "question": "Pegcetacoplan stabilised renal function, with a +…...... mL/min/1.73 m2 eGFR change vs placebo",
         "answers": [
