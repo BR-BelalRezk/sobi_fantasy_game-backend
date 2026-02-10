@@ -98,13 +98,15 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
 
         if (room.team1.answered_speed_question && room.team2.answered_speed_question && room.team_won_phase1 === null) {
           const winnerTeam = ['team1', 'team2'].at(Math.floor(Math.random() * 2)) as RoomTeamName
+          room.team_won_phase1 = winnerTeam;
           wsPool.send({
             to: ['admin', 'team1', 'team2'],
             message: {
               event: 'speed_question_winner',
               data: {
                 team: winnerTeam,
-                team_name: "No Winner"
+                team_name: "No Winner",
+                is_draw: true
               }
             }
           })

@@ -74,7 +74,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           } else {
             room[teamName].used_magic_card = true;
             wsPool.send({
-              to: [teamName, 'admin'],
+              to: [teamName],
               message: {
                 event: 'magic_card_question',
                 data: {
@@ -89,10 +89,11 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           message: {
             event: 'choosen_main_question',
             data: {
-              question,
+              question: parsed.data.use_magic_card ? apps[appName].questions.magic_questions[teamName] : question,
               club: room[teamName].choosen_club,
               team_name: room[teamName].name,
               score: room[teamName].score,
+              used_magic_card: parsed.data.use_magic_card,
             }
           }
         });
