@@ -53,7 +53,7 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
             });
           }
           room.speed_question_timeout = null;
-        }, 30000); // 60 seconds
+        }, 30000);
 
         wsPool.send({
           to: ['admin', 'team1', 'team2'],
