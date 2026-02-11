@@ -13,7 +13,7 @@ declare type Room = {
     is_connected: boolean;
     answered_main_questions_count: number,
     score: number;
-    used_magic_card: boolean;
+    used_magic_card_on: number | null;
     answered_speed_question: boolean
   };
   team2: {
@@ -22,7 +22,7 @@ declare type Room = {
     is_connected: boolean;
     answered_main_questions_count: number,
     score: number;
-    used_magic_card: boolean;
+    used_magic_card_on: number | null;
     answered_speed_question: boolean
   };
 }

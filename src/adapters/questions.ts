@@ -65,7 +65,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           }))
         }
         if (parsed.data.use_magic_card) {
-          if (room[teamName].used_magic_card) {
+          if (room[teamName].used_magic_card_on) {
             return ws.send(JSON.stringify({
               event: 'error',
               data: {
@@ -73,7 +73,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
               }
             }))
           } else {
-            room[teamName].used_magic_card = true;
+            room[teamName].used_magic_card_on = question.id;
             wsPool.send({
               to: [teamName],
               message: {
@@ -123,7 +123,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                   is_correct: false,
                   answer_id: null,
                   question_points: question.points,
-                  used_magic_card: room[currentTeam].used_magic_card,
+                  used_magic_card: Boolean(room[currentTeam].used_magic_card_on === question.id),
                   team_name: room[currentTeam].name,
                   club: room[currentTeam].choosen_club,
                 }
@@ -233,7 +233,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
               is_correct,
               answer_id: parsed.data.answer_id,
               question_points: question.points,
-              used_magic_card: room[teamName].used_magic_card,
+              used_magic_card: room[teamName].used_magic_card_on === question.id,
               team_name: room[teamName].name,
               club: room[teamName].choosen_club,
               question_img: question.img_url

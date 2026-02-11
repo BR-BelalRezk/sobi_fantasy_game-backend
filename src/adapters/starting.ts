@@ -39,7 +39,7 @@ export function StartingAdapter(wss: WebSocketServer, wsPool: WebSocketPool, roo
             name: room[name!].name,
             score: room[name].score,
             won_phase1: room.team_won_phase1 === name,
-            used_magic_card: room[name].used_magic_card,
+            used_magic_card: Boolean(room[name].used_magic_card_on),
             choosen_club: room[name].choosen_club,
           }
         }));
