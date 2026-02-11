@@ -15,6 +15,11 @@ type AnswerMessage = {
   }
 }
 
+type IntroMessage = {
+  event: 'start_speed_intro',
+  data: null
+}
+
 export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, room: Room) {
   wss.addListener('connection', (ws, request) => {
     const appName = getParams(request.url!).app_name as AppName;
@@ -22,7 +27,17 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
     const isAdmin = (getParams(request.url!).role === 'admin')
 
     ws.on('message', (data: string) => {
-      const parsed: StartMessage | AnswerMessage = JSON.parse(data.toString());
+      const parsed: StartMessage | AnswerMessage | IntroMessage = JSON.parse(data.toString());
+
+      if (parsed.event === 'start_speed_intro' && isAdmin) {
+        wsPool.send({
+          to: ['team1', 'team2'],
+          message: {
+            event: 'play_speed_intro',
+            data: null
+          }
+        })
+      }
 
       if (parsed.event === 'start_speed_question' && isAdmin) {
         const questions = apps[appName].questions
