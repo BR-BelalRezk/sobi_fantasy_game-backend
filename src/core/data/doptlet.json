@@ -1,21 +1,580 @@
 {
-    "clubs": [],
+    "clubs": [
+        {
+            "name": "Al Nassr",
+            "id": 1,
+            "logo_img_url": "/assets/images/clubs/nasr-logo.webp",
+            "name_img_url": "/assets/images/clubs/nasr-name.webp",
+            "card_img_url": "/assets/images/clubs/nasr-card.webp"
+        },
+        {
+            "name": "Al Hilal",
+            "id": 2,
+            "logo_img_url": "/assets/images/clubs/hilal-logo.webp",
+            "name_img_url": "/assets/images/clubs/hilal-name.webp",
+            "card_img_url": "/assets/images/clubs/hilal-card.webp"
+        },
+        {
+            "name": "Real Madrid",
+            "id": 3,
+            "logo_img_url": "/assets/images/clubs/madrid-logo.webp",
+            "name_img_url": "/assets/images/clubs/madrid-name.webp",
+            "card_img_url": "/assets/images/clubs/madrid-card.webp"
+        },
+        {
+            "name": "Barcelona",
+            "id": 4,
+            "logo_img_url": "/assets/images/clubs/barcelona-logo.webp",
+            "name_img_url": "/assets/images/clubs/barcelona-name.webp",
+            "card_img_url": "/assets/images/clubs/barcelona-card.webp"
+        }
+    ],
     "questions": {
         "speed_question": {
-            "audio_url": "",
-            "question": "",
-            "answers": []
+            "audio_url": "/audios/doptelet/speed_question.mp3",
+            "question": "Some months have 31 days. How many months have 28 days?",
+            "answers": [
+                {
+                    "answer": "1",
+                    "is_correct": false,
+                    "id": 1
+                },
+                {
+                    "answer": "6",
+                    "is_correct": false,
+                    "id": 2
+                },
+                {
+                    "answer": "11",
+                    "is_correct": false,
+                    "id": 3
+                },
+                {
+                    "answer": "12",
+                    "is_correct": true,
+                    "id": 4
+                }
+            ]
         },
         "magic_questions": {
             "team1": {
-                "question": "",
-                "answers": []
+                "audio_url": "/audios/doptelet/magic-question-1.mp3",
+                "question": "When the doptelet got the EMA Approval for adult ITP ?",
+                "answers": [
+                    {
+                        "answer": "2018",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "2019",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "2020",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "2021",
+                        "is_correct": true,
+                        "id": 4
+                    }
+                ]
             },
             "team2": {
-                "question": "",
-                "answers": []
+                "audio_url": "/audios/doptelet/magic-question-2.mp3",
+                "question": "When the doptelet got the FDA Approval for adult ITP ?",
+                "answers": [
+                    {
+                        "answer": "2018",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "2019",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "2020",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "2021",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
             }
         },
-        "main_questions": []
+        "main_questions": [
+            {
+                "id": 1,
+                "img_url": "/assets/images/players/ronaldo.webp",
+                "audio_url": "/audios/doptelet/q1.mp3",
+                "points": 350,
+                "question": "In meta-analysis, the pooled risk ratio (RR) for durable platelet response with TPO-RAs compared to control was:",
+                "answers": [
+                    {
+                        "answer": "2.52",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "7.52",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "4.52",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "6.52",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "img_url": "/assets/images/players/neymar.webp",
+                "audio_url": "/audios/doptelet/q2.mp3",
+                "points": 350,
+                "question": "Avatrombopag has higher affinity than Elatrombopag to which amino acids receptors of the megakaryocytes ?",
+                "answers": [
+                    {
+                        "answer": "HIS 198",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "LEU 499",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "HIS 499",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "NONE OF THE ABOVE",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "img_url": "/assets/images/players/mo.webp",
+                "audio_url": "/audios/doptelet/q3.mp3",
+                "points": 350,
+                "question": "Avatrombopag was shown to reduce all bleeding events with an RR compared to control:",
+                "answers": [
+                    {
+                        "answer": "0.5",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "0.67",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "0.8",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "1",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "img_url": "/assets/images/players/messi.webp",
+                "audio_url": "/audios/doptelet/q4.mp3",
+                "points": 350,
+                "question": "Median platelet count in 302 trial with Doptelet:",
+                "answers": [
+                    {
+                        "answer": "70.5",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "75.5",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "80.5",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "90.5",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "img_url": "/assets/images/players/salem.webp",
+                "audio_url": "/audios/doptelet/q5.mp3",
+                "points": 250,
+                "question": "Avatrombopag’s safety was evaluated in Phase 3 trials by grading adverse events using:",
+                "answers": [
+                    {
+                        "answer": "WHO guidelines",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "CTCAE criteria",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "img_url": "/assets/images/players/sadio.webp",
+                "audio_url": "/audios/doptelet/q6.mp3",
+                "points": 250,
+                "question": "Proportion ITP patients on Rituximab achieving platelet response?",
+                "answers": [
+                    {
+                        "answer": "18%",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "38%",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "58%",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "68%",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "img_url": "/assets/images/players/vinicius.webp",
+                "audio_url": "/audios/doptelet/q7.mp3",
+                "points": 250,
+                "question": "What percentage of patients who switched to Avatrombopag due to prior TPO-RA ineffectiveness achieved platelet response?",
+                "answers": [
+                    {
+                        "answer": "56%",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "76%",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "86%",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "100%",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "img_url": "/assets/images/players/pedri.webp",
+                "audio_url": "/audios/doptelet/q8.mp3",
+                "points": 250,
+                "question": "Avatrombopag achieves durable platelet responses in what percentage of patients after switching from Romiplostim/Eltrombopag?",
+                "answers": [
+                    {
+                        "answer": "40-50%",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "50-60%",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "80-90%",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "100%",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "img_url": "/assets/images/players/malcom.webp",
+                "audio_url": "/audios/doptelet/q9.mp3",
+                "points": 100,
+                "question": "What is the recommended protocol for a missed dose of Avatrombopag?",
+                "answers": [
+                    {
+                        "answer": "Skip the dose entirely",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Take two doses simultaneously the next day",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Take the missed dose as soon as remembered, without doubling doses",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Consult a doctor immediately",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "img_url": "/assets/images/players/otavio.webp",
+                "audio_url": "/audios/doptelet/q10.mp3",
+                "points": 100,
+                "question": "Avatrombopag can be crushed and mixed with yogurt for administration within:",
+                "answers": [
+                    {
+                        "answer": "15 mins",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "30 mins",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "45 mins",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "60 mins",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "img_url": "/assets/images/players/luka.webp",
+                "audio_url": "/audios/doptelet/q11.mp3",
+                "points": 100,
+                "question": "In 302 study, Incidence and severity of bleeding events is:",
+                "answers": [
+                    {
+                        "answer": "Primary E.P",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Secondary E.P",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Safety E.P",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Exploratory E.P",
+                        "is_correct": true,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "img_url": "/assets/images/players/gavi.webp",
+                "audio_url": "/audios/doptelet/q12.mp3",
+                "points": 100,
+                "question": "Avatrombopag therapy should be discontinued if platelet counts:",
+                "answers": [
+                    {
+                        "answer": "Do not increase to ≥50 × 10⁹/L after 4 weeks at maximum dose",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Exceed 100 × 10⁹/L",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Drop below 10 × 10⁹/L after one dose",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Do not change in the first week of treatment",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 13,
+                "img_url": "/assets/images/players/ali.webp",
+                "audio_url": "/audios/doptelet/q13.mp3",
+                "points": 50,
+                "question": "Which receptor does Avatrombopag target?",
+                "answers": [
+                    {
+                        "answer": "Thrombopoietin receptor",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Histamine receptor",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Dopamine receptor",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Beta-adrenergic receptor",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "img_url": "/assets/images/players/abdulrahman.webp",
+                "audio_url": "/audios/doptelet/q14.mp3",
+                "points": 50,
+                "question": "Which of the following TPO-RAs act on TPO receptor’s extracellular domain:",
+                "answers": [
+                    {
+                        "answer": "Hetrombopag",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Eltrombopag",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Romiplostim",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Avatrombopag",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "img_url": "/assets/images/players/lucas.webp",
+                "audio_url": "/audios/doptelet/q15.mp3",
+                "points": 50,
+                "question": "What is the recommended starting dose of Avatrombopag for patients with chronic ITP?",
+                "answers": [
+                    {
+                        "answer": "10 mg daily",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "20 mg daily",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "30 mg daily",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "40 mg daily",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "img_url": "/assets/images/players/sergi.webp",
+                "audio_url": "/audios/doptelet/q16.mp3",
+                "points": 50,
+                "question": "What is the onset of effect for Avatrombopag?",
+                "answers": [
+                    {
+                        "answer": "24 hours",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "3-5 days",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "7 days",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "2 weeks",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            }
+        ]
     }
 }
