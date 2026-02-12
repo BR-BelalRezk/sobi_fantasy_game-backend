@@ -82,6 +82,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           }))
         }
 
+
         // Send hold event to the other team
         const holdMessage = {
           event: 'hold_choosing_main_question',
@@ -89,6 +90,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
         };
         wsPool.send({ to: [remainingTeamName], message: holdMessage });
         recordEvent(room, holdMessage, [remainingTeamName]);
+
 
         if (parsed.data.use_magic_card) {
           if (room[teamName].used_magic_card_on) {
@@ -109,6 +111,15 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
             wsPool.send({ to: [teamName], message });
             recordEvent(room, message, [teamName]);
           }
+        } else {
+          const msg = {
+            event: 'choosen_main_question',
+            data: {
+              question_id: question.id,
+            }
+          }
+          ws.send(JSON.stringify(msg))
+          recordEvent(room, msg, [teamName]);
         }
         const message = {
           event: 'choosen_main_question',
@@ -144,14 +155,15 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                 score: room[currentTeam].score,
                 is_correct: false,
                 answer_id: null,
+                question_id: question.id,
                 question_points: question.points,
                 used_magic_card: Boolean(room[currentTeam].used_magic_card_on === question.id),
                 team_name: room[currentTeam].name,
                 club: room[currentTeam].choosen_club,
               }
             };
-            wsPool.send({ to: ['admin'], message: message1 });
-            recordEvent(room, message1, ['admin']);
+            wsPool.send({ to: ['admin', currentTeam], message: message1 });
+            recordEvent(room, message1, ['admin', currentTeam]);
 
             const message2 = {
               event: 'unhold_choosing_main_question',
@@ -171,7 +183,9 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                 };
                 wsPool.send({ to: ['team1', 'team2', 'admin'], message });
                 recordEvent(room, message, ['team1', 'team2', 'admin']);
-                wsPool.clear()
+                wsPool.clear();
+                const newRoom = JSON.parse(JSON.stringify(baseRoom))
+                Object.assign(room, newRoom)
               }
               if (room.team1.answered_main_questions_count >= 5 && (Math.abs(room.team1.score - room.team2.score) > 0)) {
                 let data = {
@@ -192,8 +206,9 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                 };
                 wsPool.send({ to: ['team1', 'team2', 'admin'], message });
                 recordEvent(room, message, ['team1', 'team2', 'admin']);
-                room = baseRoom;
-                wsPool.clear()
+                wsPool.clear();
+                const newRoom = JSON.parse(JSON.stringify(baseRoom))
+                Object.assign(room, newRoom)
               }
 
               if (room.team1.answered_main_questions_count === 5 && (room.team1.score === room.team2.score)) {
@@ -246,6 +261,7 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           event: 'main_question_answer_result',
           data: {
             score: room[teamName].score,
+            question_id: question.id,
             is_correct,
             answer_id: parsed.data.answer_id,
             question_points: question.points,
@@ -255,8 +271,8 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
             question_img: question.img_url
           }
         };
-        wsPool.send({ to: ['admin'], message });
-        recordEvent(room, message, ['admin']);
+        wsPool.send({ to: ['admin', teamName], message });
+        recordEvent(room, message, ['admin', teamName]);
 
         wait(2000).then(() => {
           const message = {
@@ -286,7 +302,9 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
             };
             wsPool.send({ to: ['team1', 'team2', 'admin'], message });
             recordEvent(room, message, ['team1', 'team2', 'admin']);
-            wsPool.clear()
+            wsPool.clear();
+            const newRoom = JSON.parse(JSON.stringify(baseRoom))
+            Object.assign(room, newRoom)
           }
           if (room.team1.answered_main_questions_count >= 5 && (Math.abs(room.team1.score - room.team2.score) > 0)) {
             let data = {
@@ -307,8 +325,9 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
             };
             wsPool.send({ to: ['team1', 'team2', 'admin'], message });
             recordEvent(room, message, ['team1', 'team2', 'admin']);
-            room = baseRoom;
-            wsPool.clear()
+            wsPool.clear();
+            const newRoom = JSON.parse(JSON.stringify(baseRoom))
+            Object.assign(room, newRoom)
           }
 
           if (room.team1.answered_main_questions_count === 5 && (room.team1.score === room.team2.score)) {

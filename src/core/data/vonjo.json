@@ -1,1 +1,550 @@
-{}
+{
+  "clubs": [
+    {
+      "name": "Al Nassr",
+      "id": 1,
+      "logo_img_url": "/assets/images/clubs/nasr-logo.webp",
+      "name_img_url": "/assets/images/clubs/nasr-name.webp",
+      "card_img_url": "/assets/images/clubs/nasr-card.webp"
+    },
+    {
+      "name": "Al Hilal",
+      "id": 2,
+      "logo_img_url": "/assets/images/clubs/hilal-logo.webp",
+      "name_img_url": "/assets/images/clubs/hilal-name.webp",
+      "card_img_url": "/assets/images/clubs/hilal-card.webp"
+    },
+    {
+      "name": "Real Madrid",
+      "id": 3,
+      "logo_img_url": "/assets/images/clubs/madrid-logo.webp",
+      "name_img_url": "/assets/images/clubs/madrid-name.webp",
+      "card_img_url": "/assets/images/clubs/madrid-card.webp"
+    },
+    {
+      "name": "Barcelona",
+      "id": 4,
+      "logo_img_url": "/assets/images/clubs/barcelona-logo.webp",
+      "name_img_url": "/assets/images/clubs/barcelona-name.webp",
+      "card_img_url": "/assets/images/clubs/barcelona-card.webp"
+    }
+  ],
+  "questions": {
+    "speed_question": {
+      "audio_url": "/audios/vonjo/speed_question.mp3",
+      "question": "Which country has won the most FIFA World Cups in history?",
+      "answers": [
+        {
+          "answer": "Germany",
+          "is_correct": false,
+          "id": 1
+        },
+        {
+          "answer": "Argentina",
+          "is_correct": false,
+          "id": 2
+        },
+        {
+          "answer": "Brazil",
+          "is_correct": true,
+          "id": 3
+        },
+        {
+          "answer": "Italy",
+          "is_correct": false,
+          "id": 4
+        }
+      ]
+    },
+    "magic_questions": {
+      "team1": {
+        "audio_url": "/audios/vonjo/magic-question-1.mp3",
+        "question": "in PERSIST 2 Study ...... of patients on VONJO were anemic (Hgb <10 g/dL)",
+        "answers": [
+          {
+            "answer": "55%",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "59%",
+            "is_correct": true,
+            "id": 2
+          },
+          {
+            "answer": "62%",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "65%",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      "team2": {
+        "audio_url": "/audios/vonjo/magic-question-2.mp3",
+        "question": "in PERSIST 2 Study : Proportion of patients with reduced RBC transfusion burden at Week 24 with VONJO 200 mg BID",
+        "answers": [
+          {
+            "answer": "25%",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "22%",
+            "is_correct": true,
+            "id": 2
+          },
+          {
+            "answer": "27%",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "20%",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      }
+    },
+    "main_questions": [
+      {
+        "id": 1,
+        "img_url": "/assets/images/players/ronaldo.webp",
+        "audio_url": "/audios/vonjo/sa_national_sport.mp3",
+        "points": 350,
+        "question": "Which sport is considered South Africa's most popular and historically significant national sport?",
+        "answers": [
+          {
+            "answer": "Soccer",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "Cricket",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "Rugby",
+            "is_correct": true,
+            "id": 3
+          },
+          {
+            "answer": "Field Hockey",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "img_url": "/assets/images/players/neymar.webp",
+        "audio_url": "/audios/vonjo/nccn_guidelines_symptoms.mp3",
+        "points": 350,
+        "question": "per NCCN Guidelines, vonjo is the treatment option for patients with symptomatic MF-associated anemia with symptoms not controlled",
+        "answers": [
+          {
+            "answer": "2A",
+            "is_correct": true,
+            "id": 1
+          },
+          {
+            "answer": "2B",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "1B",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "1A",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "img_url": "/assets/images/players/mo.webp",
+        "audio_url": "/audios/vonjo/persist2_rbc_transfusion.mp3",
+        "points": 350,
+        "question": "In PERSIST 2 Study, ....% of patients were RBC transfusion dependent",
+        "answers": [
+          {
+            "answer": "20%",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "23%",
+            "is_correct": true,
+            "id": 2
+          },
+          {
+            "answer": "59%",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "55%",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "img_url": "/assets/images/players/robert.webp",
+        "audio_url": "/audios/vonjo/persist2_median_dose.mp3",
+        "points": 350,
+        "question": "In PERSIST 2 Study, Median VONJO daily dose was ....... mg",
+        "answers": [
+          {
+            "answer": "400",
+            "is_correct": true,
+            "id": 1
+          },
+          {
+            "answer": "380",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "360",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "350",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "img_url": "/assets/images/players/salem.webp",
+        "audio_url": "/audios/vonjo/momelotinib_dose_reduction.mp3",
+        "points": 250,
+        "question": "For patients with platelet counts 20-<50 x 10^9/L on treatment by Momelotinib, Reduce daily dose by ...... mg from the last given dose",
+        "answers": [
+          {
+            "answer": "100",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "50",
+            "is_correct": true,
+            "id": 2
+          },
+          {
+            "answer": "25",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "75",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "img_url": "/assets/images/players/sadio.webp",
+        "audio_url": "/audios/vonjo/ruxolitinib_bat_arm.mp3",
+        "points": 250,
+        "question": "What is share of Ruxolitinib among BAT arm in PERSIST 2",
+        "answers": [
+          {
+            "answer": "45%",
+            "is_correct": true,
+            "id": 1
+          },
+          {
+            "answer": "50%",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "55%",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "40%",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "img_url": "/assets/images/players/vinicius.webp",
+        "audio_url": "/audios/vonjo/persist2_primary_mf.mp3",
+        "points": 250,
+        "question": "In PERSIST 2 Study Disease history: .......% of patients had primary MF",
+        "answers": [
+          {
+            "answer": "55%",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "68%",
+            "is_correct": true,
+            "id": 2
+          },
+          {
+            "answer": "72%",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "76%",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "img_url": "/assets/images/players/pedri.webp",
+        "audio_url": "/audios/vonjo/pacritinib_acvr1_potency.mp3",
+        "points": 250,
+        "question": "Pacritinib is ...... more potent than momelotinib against ACVR1",
+        "answers": [
+          {
+            "answer": "3.5X",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "2.5X",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "4X",
+            "is_correct": true,
+            "id": 3
+          },
+          {
+            "answer": "3X",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "img_url": "/assets/images/players/malcom.webp",
+        "audio_url": "/audios/vonjo/thrombocytopenia_prevalence.mp3",
+        "points": 100,
+        "question": "Prevalence of thrombocytopenia in patients with MF rises over time up to ........at any time during disease course",
+        "answers": [
+          {
+            "answer": "60%",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "70%",
+            "is_correct": true,
+            "id": 2
+          },
+          {
+            "answer": "80%",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "90%",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "img_url": "/assets/images/players/otavio.webp",
+        "audio_url": "/audios/vonjo/nccn_high_risk_mf.mp3",
+        "points": 100,
+        "question": "NCCN Guidelines : Vonjo is the recommended option for \u226550 x 10^9/L higher-risk MF",
+        "answers": [
+          {
+            "answer": "TRUE",
+            "is_correct": true,
+            "id": 1
+          },
+          {
+            "answer": "FALSE",
+            "is_correct": false,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "img_url": "/assets/images/players/luka.webp",
+        "audio_url": "/audios/vonjo/persist2_co_primary_endpoint.mp3",
+        "points": 100,
+        "question": "PERSIST 2 Study co-primary end point",
+        "answers": [
+          {
+            "answer": "SVR \u226535% by MRI/CT",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "\u226550% reduction in TSS",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "Changes in hematologic parameters",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "A+B",
+            "is_correct": true,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "img_url": "/assets/images/players/gavi.webp",
+        "audio_url": "/audios/vonjo/ruxolitinib_dosage_limit.mp3",
+        "points": 100,
+        "question": "Real-world prescription data reveals .........% of ruxolitinib dosing is limited to 5 or 10 mg BID",
+        "answers": [
+          {
+            "answer": "60%",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "62%",
+            "is_correct": true,
+            "id": 2
+          },
+          {
+            "answer": "67%",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "70%",
+            "is_correct": false,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "img_url": "/assets/images/players/ali.webp",
+        "audio_url": "/audios/vonjo/ruxolitinib_failure_definition.mp3",
+        "points": 50,
+        "question": "Defining Ruxolitinib Failure and Loss of Response",
+        "answers": [
+          {
+            "answer": "Primary Refractory",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "Loss of Response or Progressive Disease",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "Intolerance",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "All of the above",
+            "is_correct": true,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "img_url": "/assets/images/players/abdulrahman.webp",
+        "audio_url": "/audios/vonjo/vonjo_targets.mp3",
+        "points": 50,
+        "question": "Vonjo targets JAK1, JAK2, FLT3, IRAK1, ACVR1",
+        "answers": [
+          {
+            "answer": "TRUE",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "FALSE",
+            "is_correct": true,
+            "id": 2
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "img_url": "/assets/images/players/lucas.webp",
+        "audio_url": "/audios/vonjo/vonjo_platelet_study.mp3",
+        "points": 50,
+        "question": "VONJO was studied in patients with platelet counts \u2264100 x 10^9/L with or without anemia",
+        "answers": [
+          {
+            "answer": "\u226430 x 10^9/L",
+            "is_correct": false,
+            "id": 1
+          },
+          {
+            "answer": "\u2264200 x 10^9/L",
+            "is_correct": false,
+            "id": 2
+          },
+          {
+            "answer": "\u226450 x 10^9/L",
+            "is_correct": false,
+            "id": 3
+          },
+          {
+            "answer": "\u2264100 x 10^9/L",
+            "is_correct": true,
+            "id": 4
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "img_url": "/assets/images/players/sergi.webp",
+        "audio_url": "/audios/vonjo/diarrhea_pacritinib.mp3",
+        "points": 50,
+        "question": "Diarrhea with pacritinib mostly occurred during weeks 1\u20138, was manageable with anti-diarrheals and generally resolved within 1\u20132 weeks",
+        "answers": [
+          {
+            "answer": "TRUE",
+            "is_correct": true,
+            "id": 1
+          },
+          {
+            "answer": "FALSE",
+            "is_correct": false,
+            "id": 2
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,1 +1,580 @@
-{}
+{
+    "clubs": [
+        {
+            "name": "Al Nassr",
+            "id": 1,
+            "logo_img_url": "/assets/images/clubs/nasr-logo.webp",
+            "name_img_url": "/assets/images/clubs/nasr-name.webp",
+            "card_img_url": "/assets/images/clubs/nasr-card.webp"
+        },
+        {
+            "name": "Al Hilal",
+            "id": 2,
+            "logo_img_url": "/assets/images/clubs/hilal-logo.webp",
+            "name_img_url": "/assets/images/clubs/hilal-name.webp",
+            "card_img_url": "/assets/images/clubs/hilal-card.webp"
+        },
+        {
+            "name": "Real Madrid",
+            "id": 3,
+            "logo_img_url": "/assets/images/clubs/madrid-logo.webp",
+            "name_img_url": "/assets/images/clubs/madrid-name.webp",
+            "card_img_url": "/assets/images/clubs/madrid-card.webp"
+        },
+        {
+            "name": "Barcelona",
+            "id": 4,
+            "logo_img_url": "/assets/images/clubs/barcelona-logo.webp",
+            "name_img_url": "/assets/images/clubs/barcelona-name.webp",
+            "card_img_url": "/assets/images/clubs/barcelona-card.webp"
+        }
+    ],
+    "questions": {
+        "speed_question": {
+            "audio_url": "/audios/gamifient/speed_question.mp3",
+            "question": "what is the country of origin of Sobi?",
+            "answers": [
+                {
+                    "answer": "Syrian",
+                    "is_correct": false,
+                    "id": 1
+                },
+                {
+                    "answer": "Egyptian",
+                    "is_correct": false,
+                    "id": 2
+                },
+                {
+                    "answer": "Swedish",
+                    "is_correct": true,
+                    "id": 3
+                },
+                {
+                    "answer": "Russian",
+                    "is_correct": false,
+                    "id": 4
+                }
+            ]
+        },
+        "magic_questions": {
+            "team1": {
+                "audio_url": "/audios/gamifient/magic-question-1.mp3",
+                "question": "Which is a clinical feature of Still's disease?",
+                "answers": [
+                    {
+                        "answer": "Butterfly rash",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Salmon-pink rash",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Vesicular rash",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Bullous rash",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            "team2": {
+                "audio_url": "/audios/gamifient/magic-question-2.mp3",
+                "question": "Which feature is common to both HLH and MAS?",
+                "answers": [
+                    {
+                        "answer": "Hyperferritinemia",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Hypercalcemia",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Polycythemia",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Nephrotic syndrome",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            }
+        },
+        "main_questions": [
+            {
+                "id": 1,
+                "img_url": "/assets/images/players/ronaldo.webp",
+                "audio_url": "/audios/gamifient/mas_lab_feature.mp3",
+                "points": 350,
+                "question": "A laboratory feature of MAS is",
+                "answers": [
+                    {
+                        "answer": "Thrombocytosis",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Hypofibrinogenemia",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "High ESR",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "D. Hypercalcemia",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "img_url": "/assets/images/players/neymar.webp",
+                "audio_url": "/audios/gamifient/mas_vs_sjia.mp3",
+                "points": 350,
+                "question": "MAS differs from active sJIA mainly by",
+                "answers": [
+                    {
+                        "answer": "Lower ferritin",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Absence of fever",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Cytopenias and liver dysfunction",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Presence of arthritis",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "img_url": "/assets/images/players/mo.webp",
+                "audio_url": "/audios/gamifient/il18_mas.mp3",
+                "points": 350,
+                "question": "IL-18 is particularly elevated in",
+                "answers": [
+                    {
+                        "answer": "Rheumatoid arthritis",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "sJIA-associated MAS",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Psoriatic arthritis",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Gout",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "img_url": "/assets/images/players/robert.webp",
+                "audio_url": "/audios/gamifient/ifng_production.mp3",
+                "points": 350,
+                "question": "Which cell type mainly produces IFN-\u03B3 in MAS",
+                "answers": [
+                    {
+                        "answer": "CD8+ T cell",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "B cell",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "CD 25",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Mast Cell",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "img_url": "/assets/images/players/salem.webp",
+                "audio_url": "/audios/gamifient/mas_treatment_goal.mp3",
+                "points": 250,
+                "question": "A main goal of MAS treatment is to",
+                "answers": [
+                    {
+                        "answer": "Cure arthritis",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Suppress hyperinflammation",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Increase antibody production",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Stimulate bone marrow",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "img_url": "/assets/images/players/sadio.webp",
+                "audio_url": "/audios/gamifient/hyperferritinemia_reflects.mp3",
+                "points": 250,
+                "question": "Hyperferritinemia in MAS reflects",
+                "answers": [
+                    {
+                        "answer": "Iron deficiency",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Chronic infection",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Macrophage activation and inflammation",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Liver cirrhosis",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "img_url": "/assets/images/players/vinicius.webp",
+                "audio_url": "/audios/gamifient/secondary_hlh_trigger.mp3",
+                "points": 250,
+                "question": "Which Infection is a common trigger of secondary HLH?",
+                "answers": [
+                    {
+                        "answer": "EBV",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Influenza B",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "HIV",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Hepatitis A",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "img_url": "/assets/images/players/pedri.webp",
+                "audio_url": "/audios/gamifient/hypertriglyceridemia_mas.mp3",
+                "points": 250,
+                "question": "Hypertriglyceridemia in MAS results from",
+                "answers": [
+                    {
+                        "answer": "Increased insulin",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Renal Failure",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "High dietary fat",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Reduced lipoprotein lipase activity",
+                        "is_correct": true,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "img_url": "/assets/images/players/malcom.webp",
+                "audio_url": "/audios/gamifient/mas_classification.mp3",
+                "points": 100,
+                "question": "MAS is best classified as",
+                "answers": [
+                    {
+                        "answer": "Primary HLH",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Secondary HLH associated with rheumatic disease",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Malignancy-associated HLH",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Congenital immune deficiency",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "img_url": "/assets/images/players/otavio.webp",
+                "audio_url": "/audios/gamifient/hemophagocytosis_def.mp3",
+                "points": 100,
+                "question": "Hemophagocytosis refers to",
+                "answers": [
+                    {
+                        "answer": "Phagocytosis of erythrocytes by neutrophils",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Phagocytosis of blood cells by macrophages",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Platelet destruction in spleen",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Lymphocyte apoptosis",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "img_url": "/assets/images/players/luka.webp",
+                "audio_url": "/audios/gamifient/mas_lab_pattern.mp3",
+                "points": 100,
+                "question": "Which laboratory pattern is typical of MAS",
+                "answers": [
+                    {
+                        "answer": "Low platelets, high ferritin",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "High platelets, high fibrinogen",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "high platelets, low Ferritin",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Normal AST",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "img_url": "/assets/images/players/gavi.webp",
+                "audio_url": "/audios/gamifient/emapalumab_response_time.mp3",
+                "points": 100,
+                "question": "Time to initial response after emapalumab initiation was generally",
+                "answers": [
+                    {
+                        "answer": "Several months",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "4-6 weeks",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Within days to 1\u20132 weeks",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Only after therapy completion",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 13,
+                "img_url": "/assets/images/players/ali.webp",
+                "audio_url": "/audios/gamifient/emapalumab_target.mp3",
+                "points": 50,
+                "question": "Emapalumab is a monoclonal antibody directed against which target",
+                "answers": [
+                    {
+                        "answer": "IL-1\u03B2",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "IL-6 receptor",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Interferon-\u03B3",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "TNF-\u03B1",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "img_url": "/assets/images/players/abdulrahman.webp",
+                "audio_url": "/audios/gamifient/mas_triggers.mp3",
+                "points": 50,
+                "question": "MAS can be triggered by",
+                "answers": [
+                    {
+                        "answer": "Viral infections",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Disease flare",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Certain biologics",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "D. All of the above",
+                        "is_correct": true,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "img_url": "/assets/images/players/lucas.webp",
+                "audio_url": "/audios/gamifient/hlh_mas_common_feature.mp3",
+                "points": 50,
+                "question": "Which feature is common to both HLH and MAS?",
+                "answers": [
+                    {
+                        "answer": "Hyperferritinemia",
+                        "is_correct": true,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Hypercalcemia",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Polycythemia",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Nephrotic syndrome",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "img_url": "/assets/images/players/sergi.webp",
+                "audio_url": "/audios/gamifient/ifng_biomarker.mp3",
+                "points": 50,
+                "question": "Which biomarker is induced exclusively by IFN-\u03B3?",
+                "answers": [
+                    {
+                        "answer": "IL-6",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "CXCL9",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "CRP",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "ESR",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            }
+        ]
+    }
+}
