@@ -42,7 +42,7 @@ declare type Room = {
 declare type RoomTeamName = 'team1' | 'team2'
 
 
-declare type AppName = 'c3g' | 'dbd-dash' | 'doptlet' | 'gamifient' | 'vonjo'
+declare type AppName = 'c3g' | 'altuviiio' | 'doptlet' | 'gamifient' | 'vonjo'
 
 declare type Club = {
   name: string;

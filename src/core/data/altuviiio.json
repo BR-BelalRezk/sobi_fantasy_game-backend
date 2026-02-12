@@ -1,0 +1,580 @@
+{
+    "clubs": [
+        {
+            "name": "Al Nassr",
+            "id": 1,
+            "logo_img_url": "/assets/images/clubs/nasr-logo.webp",
+            "name_img_url": "/assets/images/clubs/nasr-name.webp",
+            "card_img_url": "/assets/images/clubs/nasr-card.webp"
+        },
+        {
+            "name": "Al Hilal",
+            "id": 2,
+            "logo_img_url": "/assets/images/clubs/hilal-logo.webp",
+            "name_img_url": "/assets/images/clubs/hilal-name.webp",
+            "card_img_url": "/assets/images/clubs/hilal-card.webp"
+        },
+        {
+            "name": "Real Madrid",
+            "id": 3,
+            "logo_img_url": "/assets/images/clubs/madrid-logo.webp",
+            "name_img_url": "/assets/images/clubs/madrid-name.webp",
+            "card_img_url": "/assets/images/clubs/madrid-card.webp"
+        },
+        {
+            "name": "Barcelona",
+            "id": 4,
+            "logo_img_url": "/assets/images/clubs/barcelona-logo.webp",
+            "name_img_url": "/assets/images/clubs/barcelona-name.webp",
+            "card_img_url": "/assets/images/clubs/barcelona-card.webp"
+        }
+    ],
+    "questions": {
+        "speed_question": {
+            "audio_url": "/audios/altuviiio/speed_question.mp3",
+            "question": "How many birthdays does the average person have?",
+            "answers": [
+                {
+                    "answer": "10",
+                    "is_correct": false,
+                    "id": 1
+                },
+                {
+                    "answer": "18",
+                    "is_correct": false,
+                    "id": 2
+                },
+                {
+                    "answer": "every year",
+                    "is_correct": false,
+                    "id": 3
+                },
+                {
+                    "answer": "1",
+                    "is_correct": true,
+                    "id": 4
+                }
+            ]
+        },
+        "magic_questions": {
+            "team1": {
+                "audio_url": "/audios/altuviiio/magic-question-1.mp3",
+                "question": "Under which category Altuviiio lies?",
+                "answers": [
+                    {
+                        "answer": "SHL",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "EHL",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "UHL",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "NFT",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            "team2": {
+                "audio_url": "/audios/altuviiio/magic-question-2.mp3",
+                "question": "Treatment protocol of synovitis is to raise the factor activity beyond what level for at least six months?",
+                "answers": [
+                    {
+                        "answer": "15%",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "20%",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "30%",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "40%",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            }
+        },
+        "main_questions": [
+            {
+                "id": 1,
+                "img_url": "/assets/images/players/ronaldo.webp",
+                "audio_url": "/audios/altuviiio/ronaldo.mp3",
+                "points": 350,
+                "question": "Efanesoctocog alfa prophylaxis led to significant meaningful improvements in pain intensity outcomes:",
+                "answers": [
+                    {
+                        "answer": "-0.12",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "-0.21",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "-3.2",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "-6.79",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "img_url": "/assets/images/players/neymar.webp",
+                "audio_url": "/audios/altuviiio/neymar.mp3",
+                "points": 350,
+                "question": "Efanesoctocog alfa prophylaxis led to significant meaningful improvements in Haem-A-QoL (in physical health domain)",
+                "answers": [
+                    {
+                        "answer": "-0.12",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "-0.21",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "-3.2",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "-6.79",
+                        "is_correct": true,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "img_url": "/assets/images/players/mo.webp",
+                "audio_url": "/audios/altuviiio/mo.mp3",
+                "points": 350,
+                "question": "What was the key secondary endpoint of the intrapatient ABR reduction during the study?",
+                "answers": [
+                    {
+                        "answer": "67%",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "77%",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "87%",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "97%",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "img_url": "/assets/images/players/messi.webp",
+                "audio_url": "/audios/altuviiio/messi.mp3",
+                "points": 350,
+                "question": "With Efanesoctocog alfa, the Improvements in HJHS Total Score Were Observed From Baseline to Week 52 in Arm A by",
+                "answers": [
+                    {
+                        "answer": "-0.54",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "-1.54",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "-2.54",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "-3.54",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "img_url": "/assets/images/players/salem.webp",
+                "audio_url": "/audios/altuviiio/salem.mp3",
+                "points": 250,
+                "question": "Proportion of patient with ZERO spontaneous bleed in XTEND-1 trial",
+                "answers": [
+                    {
+                        "answer": "50%",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "60%",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "70%",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "80%",
+                        "is_correct": true,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "img_url": "/assets/images/players/sadio.webp",
+                "audio_url": "/audios/altuviiio/sadio.mp3",
+                "points": 250,
+                "question": "How long did Group B receive on-demand treatment with efanesoctocog alfa?",
+                "answers": [
+                    {
+                        "answer": "24 weeks",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "26 weeks",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "52 weeks",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "54 weeks",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "img_url": "/assets/images/players/vinicius.webp",
+                "audio_url": "/audios/altuviiio/vinicius.mp3",
+                "points": 250,
+                "question": "What percentage of bleeding episodes in the overall population resolved with one injection of efanesoctocog alfa?",
+                "answers": [
+                    {
+                        "answer": "65%",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "80%",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "97%",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "100%",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "img_url": "/assets/images/players/pedri.webp",
+                "audio_url": "/audios/altuviiio/pedri.mp3",
+                "points": 250,
+                "question": "In the XTEND‑ed long‑term extension, how were target joints defined and what outcome was observed after ≥12 months of efanesoctocog alfa prophylaxis?",
+                "answers": [
+                    {
+                        "answer": "Defined as ≥1 bleed/year; most target joints persisted despite prophylaxis",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Defined as ≥2 bleeds/year; ~50% of target joints resolved",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Defined as ≥3 spontaneous bleeds in 6 months; all evaluable target joints resolved after ≥12 months of prophylaxis",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Defined as ≥3 traumatic bleeds in 12 months; resolution was not assessed",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "img_url": "/assets/images/players/malcom.webp",
+                "audio_url": "/audios/altuviiio/malcom.mp3",
+                "points": 100,
+                "question": "For monitoring FVIII activity with efanesoctocog alfa using a one‑stage clotting assay, which aPTT reagent is specifically referenced as the one used throughout clinical development?",
+                "answers": [
+                    {
+                        "answer": "Actin FS",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Actin FSL",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "SynthASil",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "TriniCLOT APTT HS",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "img_url": "/assets/images/players/otavio.webp",
+                "audio_url": "/audios/altuviiio/otavio.mp3",
+                "points": 100,
+                "question": "XTEND‑1: mean ABR on weekly efanesoctocog prophylaxis was closest to:",
+                "answers": [
+                    {
+                        "answer": "0.5",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "0.6",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "0.7",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "1.7",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "img_url": "/assets/images/players/luka.webp",
+                "audio_url": "/audios/altuviiio/luka.mp3",
+                "points": 100,
+                "question": "Which limitation of gene therapy for hemophilia A is commonly highlighted in different researches?",
+                "answers": [
+                    {
+                        "answer": "It provides fully predictable, stable FVIII levels across all patients",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "It eliminates the need for long‑term follow‑up after infusion",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Durability/variability of FVIII expression remains uncertain and requires long‑term monitoring",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "It is routinely used in patients with active inhibitors and significant liver disease",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "img_url": "/assets/images/players/gavi.webp",
+                "audio_url": "/audios/altuviiio/gavi.mp3",
+                "points": 100,
+                "question": "Hemlibra SmPC: loading regimen is:",
+                "answers": [
+                    {
+                        "answer": "1.5 mg/kg weekly ×4",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "3 mg/kg weekly ×4",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "6 mg/kg every 4 weeks ×4",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "50 IU/kg weekly ×4",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 13,
+                "img_url": "/assets/images/players/ali.webp",
+                "audio_url": "/audios/altuviiio/ali.mp3",
+                "points": 50,
+                "question": "ALTUVOCT/ALTUVIIIO label guidance: for minor/moderate bleeds occurring within 2–3 days after a prophylaxis dose",
+                "answers": [
+                    {
+                        "answer": "Switch to another treatment",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "30 IU/kg dose option may be used",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "100 IU/kg dose option may be used",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Use only for life‑threatening bleeds",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "img_url": "/assets/images/players/abdulrahman.webp",
+                "audio_url": "/audios/altuviiio/abdulrahman.mp3",
+                "points": 50,
+                "question": "In a patient on Emicizumab, FVIII activity (endogenous or infused FVIII) should be measured using:",
+                "answers": [
+                    {
+                        "answer": "aPTT‑based one‑stage FVIII assay",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Human‑reagent chromogenic FVIII assay",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "PT‑based single‑factor assay",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Bovine‑reagent chromogenic FVIII assay",
+                        "is_correct": true,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "img_url": "/assets/images/players/lucas.webp",
+                "audio_url": "/audios/altuviiio/lucas.mp3",
+                "points": 50,
+                "question": "ALTUVOCT/ALTUVIIIO label guidance: after major surgery, additional doses may be given:",
+                "answers": [
+                    {
+                        "answer": "Every 8 hours",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "Daily",
+                        "is_correct": false,
+                        "id": 2
+                    },
+                    {
+                        "answer": "Every 2-3 days",
+                        "is_correct": true,
+                        "id": 3
+                    },
+                    {
+                        "answer": "Weekly",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "img_url": "/assets/images/players/sergi.webp",
+                "audio_url": "/audios/altuviiio/sergi.mp3",
+                "points": 50,
+                "question": "Why are subclinical bleeds clinically important?",
+                "answers": [
+                    {
+                        "answer": "They prolong PT",
+                        "is_correct": false,
+                        "id": 1
+                    },
+                    {
+                        "answer": "They contribute to joint damage",
+                        "is_correct": true,
+                        "id": 2
+                    },
+                    {
+                        "answer": "They prevent inhibitor formation",
+                        "is_correct": false,
+                        "id": 3
+                    },
+                    {
+                        "answer": "They raise platelet count",
+                        "is_correct": false,
+                        "id": 4
+                    }
+                ]
+            }
+        ]
+    }
+}

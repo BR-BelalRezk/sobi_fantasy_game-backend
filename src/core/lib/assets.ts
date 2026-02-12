@@ -6,7 +6,7 @@ import vonjo from '../data/vonjo.json'
 
 export const apps: Record<AppName, App> = {
   c3g,
-  dbdDash,
+  'dbd-dash': dbdDash as App,
   doptlet,
   gamifient,
   vonjo,

@@ -1,1 +1,21 @@
-{}
+{
+    "clubs": [],
+    "questions": {
+        "speed_question": {
+            "audio_url": "",
+            "question": "",
+            "answers": []
+        },
+        "magic_questions": {
+            "team1": {
+                "question": "",
+                "answers": []
+            },
+            "team2": {
+                "question": "",
+                "answers": []
+            }
+        },
+        "main_questions": []
+    }
+}
