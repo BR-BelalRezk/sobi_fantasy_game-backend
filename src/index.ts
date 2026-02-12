@@ -20,6 +20,7 @@ export const baseRoom: Room = {
   speed_question_timeout: null,
   current_main_question_timeout: null,
   current_answering_team: null,
+  admin_finished_events: [],
   team1: {
     name: "Team (A)",
     choosen_club: null,
@@ -28,7 +29,7 @@ export const baseRoom: Room = {
     used_magic_card_on: null,
     answered_speed_question: false,
     answered_main_questions_count: 0,
-
+    finished_events: []
   },
   team2: {
     name: "Team (B)",
@@ -38,6 +39,7 @@ export const baseRoom: Room = {
     used_magic_card_on: null,
     answered_speed_question: false,
     answered_main_questions_count: 0,
+    finished_events: []
   },
 }
 
@@ -50,6 +52,7 @@ const room: Room = {
   speed_question_timeout: null,
   current_main_question_timeout: null,
   current_answering_team: null,
+  admin_finished_events: [],
   team1: {
     name: "Team (A)",
     choosen_club: null,
@@ -58,7 +61,7 @@ const room: Room = {
     used_magic_card_on: null,
     answered_speed_question: false,
     answered_main_questions_count: 0,
-
+    finished_events: []
   },
   team2: {
     name: "Team (B)",
@@ -68,6 +71,7 @@ const room: Room = {
     used_magic_card_on: null,
     answered_speed_question: false,
     answered_main_questions_count: 0,
+    finished_events: []
   },
 }
 

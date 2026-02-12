@@ -1,5 +1,6 @@
 import { WebSocketServer } from "ws";
 import { WebSocketPool } from "../core/lib/helpers/web-socket-pool";
+import { recordEvent } from "../core/lib/helpers/record-event";
 import { getParams } from "../core/lib/utils";
 import { apps } from "../core/lib/assets";
 
@@ -30,13 +31,12 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
       const parsed: StartMessage | AnswerMessage | IntroMessage = JSON.parse(data.toString());
 
       if (parsed.event === 'start_speed_intro' && isAdmin) {
-        wsPool.send({
-          to: ['team1', 'team2'],
-          message: {
-            event: 'play_speed_intro',
-            data: null
-          }
-        })
+        const message = {
+          event: 'play_speed_intro',
+          data: null
+        };
+        wsPool.send({ to: ['team1', 'team2', 'admin'], message });
+        recordEvent(room, message, ['team1', 'team2', 'admin']);
       }
 
       if (parsed.event === 'start_speed_question' && isAdmin) {
@@ -56,30 +56,28 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
             const winnerTeam = ['team1', 'team2'].at(Math.floor(Math.random() * 2)) as RoomTeamName;
             room.team_won_phase1 = winnerTeam;
 
-            wsPool.send({
-              to: ['admin', 'team1', 'team2'],
-              message: {
-                event: 'speed_question_winner',
-                data: {
-                  team: winnerTeam,
-                  team_name: "No Winner"
-                }
+            const message = {
+              event: 'speed_question_winner',
+              data: {
+                team: winnerTeam,
+                team_name: "No Winner"
               }
-            });
+            };
+            wsPool.send({ to: ['admin', 'team1', 'team2'], message });
+            recordEvent(room, message, ['admin', 'team1', 'team2']);
           }
           room.speed_question_timeout = null;
         }, 30000);
 
-        wsPool.send({
-          to: ['admin', 'team1', 'team2'],
-          message: {
-            event: 'view_speed_question',
-            data: {
-              question: questions.speed_question,
-              date: Date.now()
-            }
+        const message = {
+          event: 'view_speed_question',
+          data: {
+            question: questions.speed_question,
+            date: Date.now()
           }
-        })
+        };
+        wsPool.send({ to: ['admin', 'team1', 'team2'], message });
+        recordEvent(room, message, ['admin', 'team1', 'team2']);
       }
 
       if ((parsed.event === 'answer_speed_question' && !isAdmin) && room.team_won_phase1 === null) {
@@ -99,32 +97,30 @@ export function SpeedQuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPoo
 
 
         if (room.team_won_phase1) {
-          wsPool.send({
-            to: ['admin', 'team1', 'team2'],
-            message: {
-              event: 'speed_question_winner',
-              data: {
-                team: room.team_won_phase1,
-                team_name: room[room.team_won_phase1].name
-              }
+          const message = {
+            event: 'speed_question_winner',
+            data: {
+              team: room.team_won_phase1,
+              team_name: room[room.team_won_phase1].name
             }
-          })
+          };
+          wsPool.send({ to: ['admin', 'team1', 'team2'], message });
+          recordEvent(room, message, ['admin', 'team1', 'team2']);
         }
 
         if (room.team1.answered_speed_question && room.team2.answered_speed_question && room.team_won_phase1 === null) {
           const winnerTeam = ['team1', 'team2'].at(Math.floor(Math.random() * 2)) as RoomTeamName
           room.team_won_phase1 = winnerTeam;
-          wsPool.send({
-            to: ['admin', 'team1', 'team2'],
-            message: {
-              event: 'speed_question_winner',
-              data: {
-                team: winnerTeam,
-                team_name: "No Winner",
-                is_draw: true
-              }
+          const message = {
+            event: 'speed_question_winner',
+            data: {
+              team: winnerTeam,
+              team_name: "No Winner",
+              is_draw: true
             }
-          })
+          };
+          wsPool.send({ to: ['admin', 'team1', 'team2'], message });
+          recordEvent(room, message, ['admin', 'team1', 'team2']);
         }
 
       }

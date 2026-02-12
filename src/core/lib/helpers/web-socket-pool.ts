@@ -25,7 +25,9 @@ export class WebSocketPool {
 
   send({ message, to }: { message: any, to: string[] }) {
     to.forEach((socketId) => {
-      this.sockets[socketId].send(JSON.stringify(message));
+      if (this.sockets[socketId]) {
+        this.sockets[socketId].send(JSON.stringify(message));
+      }
     });
   }
 

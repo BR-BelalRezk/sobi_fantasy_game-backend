@@ -1,5 +1,6 @@
 import { WebSocketServer } from "ws";
 import { WebSocketPool } from "../core/lib/helpers/web-socket-pool";
+import { recordEvent } from "../core/lib/helpers/record-event";
 import { getParams, getRemainingTeamName, wait } from "../core/lib/utils";
 import { apps } from "../core/lib/assets";
 import { baseRoom } from "..";
@@ -33,28 +34,44 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
       const remainingTeamName = getRemainingTeamName(room.team_won_phase1!)
 
       if (parsed.event === 'start_main_questions' && isAdmin) {
-        wsPool.send({
-          to: [remainingTeamName],
-          message: {
-            event: 'list_main_questions',
-            data: {
-              questions: apps[appName].questions.main_questions,
-              hold: true
-            }
+
+        const message1 = {
+          event: 'list_main_questions',
+          data: {
+            questions: apps[appName].questions.main_questions,
+            hold: true
           }
-        })
-        wsPool.send({
-          to: [room.team_won_phase1!],
-          message: {
-            event: 'list_main_questions',
-            data: {
-              questions: apps[appName].questions.main_questions,
-              hold: false
-            }
+        };
+        wsPool.send({ to: [remainingTeamName], message: message1 });
+        recordEvent(room, message1, [remainingTeamName]);
+
+        const message2 = {
+          event: 'list_main_questions',
+          data: {
+            questions: apps[appName].questions.main_questions,
+            hold: false
           }
-        })
+        };
+        wsPool.send({ to: [room.team_won_phase1!], message: message2 });
+        recordEvent(room, message2, [room.team_won_phase1!]);
+
+        const message3 = {
+          event: 'main_questions_started',
+          data: null
+        };
+        wsPool.send({ to: ['admin'], message: message3 });
+        recordEvent(room, message3, ['admin']);
+
+
+        const holdMessage = {
+          event: 'hold_choosing_main_question',
+          data: null
+        };
+        wsPool.send({ to: [remainingTeamName], message: holdMessage });
+        recordEvent(room, holdMessage, [remainingTeamName]);
       } else if (parsed.event === 'choose_main_question' && !isAdmin) {
         const question = apps[appName].questions.main_questions.find(q => q.id === parsed.data.question_id)
+        const remainingTeamName = getRemainingTeamName(teamName)
 
         if (!question) {
           return ws.send(JSON.stringify({
@@ -64,6 +81,15 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
             }
           }))
         }
+
+        // Send hold event to the other team
+        const holdMessage = {
+          event: 'hold_choosing_main_question',
+          data: null
+        };
+        wsPool.send({ to: [remainingTeamName], message: holdMessage });
+        recordEvent(room, holdMessage, [remainingTeamName]);
+
         if (parsed.data.use_magic_card) {
           if (room[teamName].used_magic_card_on) {
             return ws.send(JSON.stringify({
@@ -74,30 +100,28 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
             }))
           } else {
             room[teamName].used_magic_card_on = question.id;
-            wsPool.send({
-              to: [teamName],
-              message: {
-                event: 'magic_card_question',
-                data: {
-                  question: apps[appName].questions.magic_questions[teamName],
-                }
+            const message = {
+              event: 'magic_card_question',
+              data: {
+                question: apps[appName].questions.magic_questions[teamName],
               }
-            })
+            };
+            wsPool.send({ to: [teamName], message });
+            recordEvent(room, message, [teamName]);
           }
         }
-        wsPool.send({
-          to: ['admin'],
-          message: {
-            event: 'choosen_main_question',
-            data: {
-              question: parsed.data.use_magic_card ? apps[appName].questions.magic_questions[teamName] : question,
-              club: room[teamName].choosen_club,
-              team_name: room[teamName].name,
-              score: room[teamName].score,
-              used_magic_card: parsed.data.use_magic_card,
-            }
+        const message = {
+          event: 'choosen_main_question',
+          data: {
+            question: parsed.data.use_magic_card ? apps[appName].questions.magic_questions[teamName] : question,
+            club: room[teamName].choosen_club,
+            team_name: room[teamName].name,
+            score: room[teamName].score,
+            used_magic_card: parsed.data.use_magic_card,
           }
-        });
+        };
+        wsPool.send({ to: ['admin'], message });
+        recordEvent(room, message, ['admin']);
 
         if (room.current_main_question_timeout) {
           clearTimeout(room.current_main_question_timeout);
@@ -114,43 +138,39 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
 
             room[currentTeam].score -= question.points;
 
-            wsPool.send({
-              to: ['admin'],
-              message: {
-                event: 'main_question_answer_result',
-                data: {
-                  score: room[currentTeam].score,
-                  is_correct: false,
-                  answer_id: null,
-                  question_points: question.points,
-                  used_magic_card: Boolean(room[currentTeam].used_magic_card_on === question.id),
-                  team_name: room[currentTeam].name,
-                  club: room[currentTeam].choosen_club,
-                }
+            const message1 = {
+              event: 'main_question_answer_result',
+              data: {
+                score: room[currentTeam].score,
+                is_correct: false,
+                answer_id: null,
+                question_points: question.points,
+                used_magic_card: Boolean(room[currentTeam].used_magic_card_on === question.id),
+                team_name: room[currentTeam].name,
+                club: room[currentTeam].choosen_club,
               }
-            });
+            };
+            wsPool.send({ to: ['admin'], message: message1 });
+            recordEvent(room, message1, ['admin']);
 
-            wsPool.send({
-              to: [remainingTeamName],
-              message: {
-                event: 'unhold_choosing_main_question',
-                data: {
-                  choosen_questions_ids: room.choosen_main_questions_ids
-                }
+            const message2 = {
+              event: 'unhold_choosing_main_question',
+              data: {
+                choosen_questions_ids: room.choosen_main_questions_ids
               }
-            });
-
+            };
+            wsPool.send({ to: [remainingTeamName], message: message2 });
+            recordEvent(room, message2, [remainingTeamName]);
 
             if (
               (room.team1.answered_main_questions_count === room.team2.answered_main_questions_count)
             ) {
               if ((room.team1.answered_main_questions_count === 8) && (room.team1.score === room.team2.score)) {
-                wsPool.send({
-                  to: ['team1', 'team2', 'admin'],
-                  message: {
-                    event: 'game_draw',
-                  }
-                })
+                const message = {
+                  event: 'game_draw',
+                };
+                wsPool.send({ to: ['team1', 'team2', 'admin'], message });
+                recordEvent(room, message, ['team1', 'team2', 'admin']);
                 wsPool.clear()
               }
               if (room.team1.answered_main_questions_count >= 5 && (Math.abs(room.team1.score - room.team2.score) > 0)) {
@@ -166,24 +186,22 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                     club: room.team2.choosen_club,
                   }
                 }
-                wsPool.send({
-                  to: ['team1', 'team2', 'admin'],
-                  message: {
-                    event: 'winner',
-                    data
-                  }
-                })
+                const message = {
+                  event: 'winner',
+                  data
+                };
+                wsPool.send({ to: ['team1', 'team2', 'admin'], message });
+                recordEvent(room, message, ['team1', 'team2', 'admin']);
                 room = baseRoom;
                 wsPool.clear()
               }
 
               if (room.team1.answered_main_questions_count === 5 && (room.team1.score === room.team2.score)) {
-                wsPool.send({
-                  to: ['team1', 'team2', 'admin'],
-                  message: {
-                    event: 'play_draw',
-                  }
-                })
+                const message = {
+                  event: 'play_draw',
+                };
+                wsPool.send({ to: ['team1', 'team2', 'admin'], message });
+                recordEvent(room, message, ['team1', 'team2', 'admin']);
                 wsPool.clear()
               }
             }
@@ -224,45 +242,50 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
           room[teamName].score -= question.points
         }
 
-        wsPool.send({
-          to: ['admin'],
-          message: {
-            event: 'main_question_answer_result',
-            data: {
-              score: room[teamName].score,
-              is_correct,
-              answer_id: parsed.data.answer_id,
-              question_points: question.points,
-              used_magic_card: room[teamName].used_magic_card_on === question.id,
-              team_name: room[teamName].name,
-              club: room[teamName].choosen_club,
-              question_img: question.img_url
-            }
+        const message = {
+          event: 'main_question_answer_result',
+          data: {
+            score: room[teamName].score,
+            is_correct,
+            answer_id: parsed.data.answer_id,
+            question_points: question.points,
+            used_magic_card: room[teamName].used_magic_card_on === question.id,
+            team_name: room[teamName].name,
+            club: room[teamName].choosen_club,
+            question_img: question.img_url
           }
-        })
+        };
+        wsPool.send({ to: ['admin'], message });
+        recordEvent(room, message, ['admin']);
 
-        wait(5000).then(() => {
-          wsPool.send({
-            to: [remainingTeamName],
-            message: {
-              event: 'unhold_choosing_main_question',
-              data: {
-                choosen_questions_ids: room.choosen_main_questions_ids
-              }
+        wait(2000).then(() => {
+          const message = {
+            event: 'unhold_choosing_main_question',
+            data: {
+              choosen_questions_ids: room.choosen_main_questions_ids
             }
-          })
+          };
+          wsPool.send({ to: [remainingTeamName], message });
+          recordEvent(room, message, [remainingTeamName]);
+
+
+          const holdMessage = {
+            event: 'hold_choosing_main_question',
+            data: null
+          };
+          wsPool.send({ to: [teamName], message: holdMessage });
+          recordEvent(room, holdMessage, [teamName]);
         })
 
         if (
           (room.team1.answered_main_questions_count === room.team2.answered_main_questions_count)
         ) {
           if ((room.team1.answered_main_questions_count === 8) && (room.team1.score === room.team2.score)) {
-            wsPool.send({
-              to: ['team1', 'team2', 'admin'],
-              message: {
-                event: 'game_draw',
-              }
-            })
+            const message = {
+              event: 'game_draw',
+            };
+            wsPool.send({ to: ['team1', 'team2', 'admin'], message });
+            recordEvent(room, message, ['team1', 'team2', 'admin']);
             wsPool.clear()
           }
           if (room.team1.answered_main_questions_count >= 5 && (Math.abs(room.team1.score - room.team2.score) > 0)) {
@@ -278,24 +301,22 @@ export function QuestionsAdapter(wss: WebSocketServer, wsPool: WebSocketPool, ro
                 club: room.team2.choosen_club,
               }
             }
-            wsPool.send({
-              to: ['team1', 'team2', 'admin'],
-              message: {
-                event: 'winner',
-                data
-              }
-            })
+            const message = {
+              event: 'winner',
+              data
+            };
+            wsPool.send({ to: ['team1', 'team2', 'admin'], message });
+            recordEvent(room, message, ['team1', 'team2', 'admin']);
             room = baseRoom;
             wsPool.clear()
           }
 
           if (room.team1.answered_main_questions_count === 5 && (room.team1.score === room.team2.score)) {
-            wsPool.send({
-              to: ['team1', 'team2', 'admin'],
-              message: {
-                event: 'play_draw',
-              }
-            })
+            const message = {
+              event: 'play_draw',
+            };
+            wsPool.send({ to: ['team1', 'team2', 'admin'], message });
+            recordEvent(room, message, ['team1', 'team2', 'admin']);
             wsPool.clear()
           }
         }

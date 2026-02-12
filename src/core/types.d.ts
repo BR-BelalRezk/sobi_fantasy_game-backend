@@ -7,6 +7,10 @@ declare type Room = {
   speed_question_timeout: NodeJS.Timeout | null;
   current_main_question_timeout: NodeJS.Timeout | null;
   current_answering_team: RoomTeamName | null;
+  admin_finished_events: {
+    event: string,
+    data: any
+  }[]
   team1: {
     name: string;
     choosen_club: Club | null;
@@ -14,7 +18,11 @@ declare type Room = {
     answered_main_questions_count: number,
     score: number;
     used_magic_card_on: number | null;
-    answered_speed_question: boolean
+    answered_speed_question: boolean,
+    finished_events: {
+      event: string,
+      data: any
+    }[]
   };
   team2: {
     name: string;
@@ -24,6 +32,10 @@ declare type Room = {
     score: number;
     used_magic_card_on: number | null;
     answered_speed_question: boolean
+    finished_events: {
+      event: string,
+      data: any
+    }[]
   };
 }
 
